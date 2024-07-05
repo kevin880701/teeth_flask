@@ -22,7 +22,7 @@ jobs:
 
     - name: Deploy to GCP VM
       run: |
-        rsync -avz --exclude='.git' -e "ssh -o StrictHostKeyChecking=no" ./ ${{ secrets.GCP_VM_USER }}@${{ secrets.GCP_VM_IP }}:/path/to/your/app
+        rsync -avz --exclude='.git' -e "ssh -o StrictHostKeyChecking=no" ./ ${{ secrets.GCP_VM_USER }}@${{ secrets.GCP_VM_IP }}:/home/haoyu6875/flask
         ssh ${{ secrets.GCP_VM_USER }}@${{ secrets.GCP_VM_IP }} << 'EOF'
           source ~/.bashrc
           conda activate teeth  # 激活你的 conda 虛擬環境
