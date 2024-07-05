@@ -14,7 +14,7 @@ if not os.path.exists(app.config['IMAGE_FOLDER']):
 
 @app.route('/')
 def hello_world():
-    return "Hello 小白 so fast"
+    return "Hello so fast"
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=8000, debug=False)
+    app.run(host='0.0.0.0',port=8000, debug=True)
