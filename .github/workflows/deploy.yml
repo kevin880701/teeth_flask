@@ -27,7 +27,7 @@ jobs:
         mkdir -p ~/.ssh
         echo "${{ secrets.GCP_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan 34.172.22.249 >> ~/.ssh/known_hosts
+        ssh-keyscan ${{ secrets.GCP_VM_IP }} >> ~/.ssh/known_hosts
 
     - name: Deploy to GCP VM
       run: |
