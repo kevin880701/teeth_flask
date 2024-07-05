@@ -13,6 +13,15 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+
+    - name: Output secrets for debugging
+      run: |
+        echo "GCP_VM_USER: ${{ secrets.GCP_VM_USER }}"
+        echo "GCP_VM_IP: ${{ secrets.GCP_VM_IP }}"
+        # 不建議輸出私鑰，這裡僅作為示範，實際應避免
+        echo "GCP_SSH_PRIVATE_KEY: ${{ secrets.GCP_SSH_PRIVATE_KEY }}" | head -c 20
+      shell: bash
+      
     - name: Setup SSH
       run: |
         mkdir -p ~/.ssh
